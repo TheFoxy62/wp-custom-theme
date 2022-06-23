@@ -10,9 +10,14 @@ if (have_posts()):
     while (have_posts()):
         the_post();
         ?>
-            <article class="bg-slate-400">
+            <article>
                 <h2><a href="<?= get_permalink() ?>"><?php the_title() ?></a></h2>
-                <p><?php the_content() ?></p>
+                <?php if ( has_post_thumbnail() ): ?>
+                    <diV>
+                        <!--Taille de l'Image-->
+                        <?php the_post_thumbnail( 'medium' ); ?>
+                    </div>
+                <?php endif ?>
             </article>
         <?php
     endwhile;

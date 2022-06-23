@@ -9,8 +9,16 @@ get_header();
 if (have_posts()):
         the_post();
         ?>
-            <article class="bg-slate-400">
+            <article>
                 <h2><?php the_title() ?></h2>
+
+                <?php if ( has_post_thumbnail() ): ?>
+                    <diV>
+                        <!--Taille de l'Image-->
+                        <?php the_post_thumbnail( 'xxl' ); ?>
+                    </div>
+                <?php endif ?>
+
                 <p><?php the_content() ?></p>
             </article>
         <?php
